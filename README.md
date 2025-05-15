@@ -1,4 +1,4 @@
-# Benchmarking-Deep-Learning-Frameworks# Deep Learning Benchmarking Suite
+# Benchmarking-Deep-Learning-Frameworks
 
 This project provides a comparative benchmarking framework of key deep learning models—**CNN, RNN, CTC, and Transformer**—across **LibTorch C++**, **PyTorch**, and **TensorFlow**, targeting both **CPU and GPU executions**.
 
