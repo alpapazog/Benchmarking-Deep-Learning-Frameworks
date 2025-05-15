@@ -28,6 +28,7 @@ Each model is organized under its own directory containing implementations in di
     └── tensorflow/
 ```
 ---
+Each implementation has a training file (or script marked as main.py or main.cpp) and an inference file (or script marked as test.py or test.cpp). Build with cmake for cpp files, and just run the scripts for python files. Some dataset handling is required, and instructions are provided below.
 
 ## Running on CPU or GPU
 
@@ -42,8 +43,8 @@ All implementations are designed to run on **both CPU and GPU** by modifying a *
 
 | Component              | Version                                                    |
 |------------------------|------------------------------------------------------------|
-| **Python**              | 3.10                                                       |
-| **CUDA**                | 12.9                                                       |
+| **Python**              | 3.13 (Windows), 3.10 (Linux)                               |
+| **CUDA**                | 12.9, 11.8 (Windows), 12.2 (Linux)                         |
 | **PyTorch (Python)**    | 2.2.2                                                      |
 | **LibTorch C++**        | 2.2.2 (CUDA 12.1 build)                                    |
 | **TensorFlow (Python)** | 2.15.0 (CPU: Windows, GPU: Ubuntu 24.04 only)              |
