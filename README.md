@@ -23,10 +23,10 @@ Each model is organized under its own directory containing implementations in di
 │   ├── pytorch/
 │   └── tensorflow/
 └── Transformer
-├── cpp/
-├── pytorch/
-└── tensorflow/
-
+    ├── cpp/
+    ├── pytorch/
+    └── tensorflow/
+```
 ---
 
 ## Running on CPU or GPU
@@ -54,8 +54,7 @@ All implementations are designed to run on **both CPU and GPU** by modifying a *
 ## Requirements
 
 ### Python (PyTorch, TensorFlow)
-Install via `requirements.txt` or manually:
-```bash
+```
 pip install torch==2.2.2+cu121 torchvision==0.17.2+cu121 torchaudio==2.2.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
 pip install tensorflow==2.15.0
 ````
