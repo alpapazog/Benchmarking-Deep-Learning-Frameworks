@@ -1,0 +1,5 @@
+Inference Accuracy: 97.63%
+Total Inference Time: 2.0023 seconds
+Avg Inference Time per Sample: 0.000033 seconds
+Peak GPU memory used: 280.94 MB
+Current GPU memory after inference: 0.10 MB

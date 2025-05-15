@@ -1,0 +1,1 @@
+for cpu, 25 seconds for batch 10/390, epoch 1/5

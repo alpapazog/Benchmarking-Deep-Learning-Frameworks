@@ -1,0 +1,1 @@
+11 minutes for batch 100/390, epoch 1/5

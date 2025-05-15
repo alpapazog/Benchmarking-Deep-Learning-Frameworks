@@ -1,0 +1,2 @@
+Accuracy: 78.77%
+Total Inference Time: 1.0736 seconds

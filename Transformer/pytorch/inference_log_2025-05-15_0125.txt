@@ -1,0 +1,5 @@
+Total Inference Time: 278.5557 seconds
+Throughput: 89.75 samples/sec
+Average Inference Time per Batch: 712.42 ms/batch
+Model size: 208.68 MB
+Parameter count: 54703618

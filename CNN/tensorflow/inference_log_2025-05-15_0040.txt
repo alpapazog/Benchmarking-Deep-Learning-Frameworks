@@ -1,0 +1,3 @@
+Inference Accuracy: 98.09%
+Total Inference Time: 1.3458 seconds
+Avg Inference Time per Sample: 0.000022 seconds

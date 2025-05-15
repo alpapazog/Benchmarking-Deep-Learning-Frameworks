@@ -1,0 +1,7 @@
+Epoch 1: Avg Loss: 652.0167, Duration: 17.38 sec
+Epoch 2: Avg Loss: 579.3288, Duration: 15.78 sec
+Epoch 3: Avg Loss: 555.4384, Duration: 16.49 sec
+Epoch 4: Avg Loss: 547.6447, Duration: 18.07 sec
+Epoch 5: Avg Loss: 544.1620, Duration: 18.02 sec
+Total training time: 85.74 seconds
+Average epoch duration: 17.15 seconds

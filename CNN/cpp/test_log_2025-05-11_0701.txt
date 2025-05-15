@@ -1,0 +1,3 @@
+Test Accuracy: 98.02%
+Total Inference Time: 0.602497 seconds
+Avg inference time per sample: 4.04997e-05 seconds

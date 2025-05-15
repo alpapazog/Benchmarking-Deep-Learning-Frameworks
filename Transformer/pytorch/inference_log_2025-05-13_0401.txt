@@ -1,0 +1,6 @@
+Total Inference Time: 13.1446 seconds
+Throughput: 1901.92 samples/sec
+Average Inference Time per Batch: 33.62 ms/batch
+Model size: 208.68 MB
+Parameter count: 54703618
+Peak GPU memory (MB): 541.17

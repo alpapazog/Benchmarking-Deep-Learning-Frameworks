@@ -1,0 +1,7 @@
+Epoch 1: 2.01 sec
+Epoch 2: 1.61 sec
+Epoch 3: 1.64 sec
+Epoch 4: 1.60 sec
+Epoch 5: 1.61 sec
+Total training time: 8.48 seconds
+Average epoch duration: 1.70 seconds
