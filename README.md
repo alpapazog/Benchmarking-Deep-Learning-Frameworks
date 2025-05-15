@@ -72,20 +72,26 @@ pip install tensorflow==2.15.0
 
 ---
 
-## Notes
+## Datasets Used and Preparation
 
-* TensorFlow GPU runs were only tested under **Ubuntu 24.04 + CUDA 12.9**, since TensorFlow 2.15.0 lacks official CUDA 12.9 support on Windows.
-* All datasets are loaded locally or via provided scripts for IMDB, MNIST, and custom datasets.
+| Model           | Dataset                            | Download / Preparation                                                                                                                            |
+| --------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CNN**         | MNIST Handwritten Digits           | PyTorch and TensorFlow download automatically; C++ uses `getdata.py` if needed.                                                                   |
+| **RNN**         | IMDB Movie Review Sentiment        | PyTorch and TensorFlow download automatically; C++ uses `getdata.py` if needed.                                                                   |
+| **CTC**         | LibriSpeech `train-clean-5` subset | **Manually download** [train-clean-5.tar.gz](https://www.openslr.org/31/)<br>Place it in `CTC/data/` and run `getdata.py` to prepare the dataset. |
+| **Transformer** | IMDB Movie Review Sentiment        | PyTorch and TensorFlow download automatically; C++ uses `getdata.py` if needed.                                                                   |
 
----
+### Notes on Dataset Handling:
 
-## License
+* **CTC model requires manual dataset download and preprocessing.**
+* For **CTC**, only **`train-clean-5.tar.gz`** from LibriSpeech [OpenSLR 31](https://www.openslr.org/31/) is required.
+* After placing the file in the `CTC/data/` folder, run:
 
-MIT License.
-
-## Authors
-
-Alexios Chrysostomos Papazoglou
+  ```bash
+  python getdata.py
+  ```
+* Most other models (PyTorch and TensorFlow implementations) automatically download the datasets using framework APIs.
+* **LibTorch C++ implementations provide `getdata.py` scripts for dataset preparation where needed.**
 
 ---
 
