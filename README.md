@@ -33,7 +33,7 @@ Each implementation has a training file (or script marked as main.py or main.cpp
 ## Build and run libtorch c++ projects.
 CMakeFiles (CMakeLists.txt) have paths for libtorch and CUDA, make sure you fix them to the correct path depending on your system installations.
 
-The following commands can be run in Windows Powershell (individually) build and run (train and test) the CNN model in c++ with libtorch.
+The following commands can be run in Windows Powershell (individually) to build and run (train and test) the CNN model with c++ using libtorch.
 ```
 cd \path\to\CNN\cpp\
 mkdir build
@@ -42,12 +42,21 @@ $env:CudaToolkitDir = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8"
 cmake .. -DCMAKE_PREFIX_PATH="C:/libtorchgpu/libtorch" -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
 cd ..
-python getdata.py
+python getdata.py # download and process dataset
 .\build\Release\CNNGpu.exe # train and log
 .\build\Release\TestCNN.exe # inference and log 
 
 ````
+The following commands can be run in Windows Powershell (individually) to build and run (train and test) the CNN model with python using pytorch (or tensorflow when in a pytorch directory).
 
+```
+cd \path\to\CNN\pytorch\
+python main.py # train and log
+python test.py # inference and log
+
+````
+
+Windows environment variables need to be set up correctly for these to succed. Path variable must include CUDA 12.8, and if possible the libtorch dll's. If libtorch dll's are included in path they can be excluded from the cmake files, cause copying the entire library helps deployment but backtracks development.
 
 ## Running on CPU or GPU
 
