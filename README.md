@@ -47,7 +47,7 @@ python getdata.py # download and process dataset
 .\build\Release\TestCNN.exe # inference and log 
 
 ````
-The following commands can be run in Windows Powershell (individually) to build and run (train and test) the CNN model with python using pytorch (or tensorflow when in a pytorch directory).
+The following commands can be run in Windows Powershell (individually) to build and run (train and test) the CNN model with python using pytorch (or tensorflow when in a tensorflow directory).
 
 ```
 cd \path\to\CNN\pytorch\
