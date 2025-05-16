@@ -30,6 +30,25 @@ Each model is organized under its own directory containing implementations in di
 ---
 Each implementation has a training file (or script marked as main.py or main.cpp) and an inference file (or script marked as test.py or test.cpp). Build with cmake for cpp files, and just run the scripts for python files. Some dataset handling is required, and instructions are provided below.
 
+## Build and run libtorch c++ projects.
+CMakeFiles (CMakeLists.txt) have paths for libtorch and CUDA, make sure you fix them to the correct path depending on your system installations.
+
+The following commands can be run in Windows Powershell (individually) build and run (train and test) the CNN model in c++ with libtorch.
+```
+cd \path\to\CNN\cpp\
+mkdir build
+cd build
+$env:CudaToolkitDir = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8" 
+cmake .. -DCMAKE_PREFIX_PATH="C:/libtorchgpu/libtorch" -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release
+cd ..
+python getdata.py
+.\build\Release\CNNGpu.exe # train and log
+.\build\Release\TestCNN.exe # inference and log 
+
+````
+
+
 ## Running on CPU or GPU
 
 All implementations are designed to run on **both CPU and GPU** by modifying a **single line of code in each script** (device setup line):
@@ -44,7 +63,7 @@ All implementations are designed to run on **both CPU and GPU** by modifying a *
 | Component              | Version                                                    |
 |------------------------|------------------------------------------------------------|
 | **Python**              | 3.13 (Windows), 3.10 (Linux)                               |
-| **CUDA**                | 12.9, 11.8 (Windows), 12.2 (Linux)                         |
+| **CUDA**                | 12.8 (Windows), 12.2 (Linux)                               |
 | **PyTorch (Python)**    | 2.2.2                                                      |
 | **LibTorch C++**        | 2.2.2 (CUDA 12.1 build)                                    |
 | **TensorFlow (Python)** | 2.15.0 (CPU: Windows, GPU: Ubuntu 24.04 only)              |
