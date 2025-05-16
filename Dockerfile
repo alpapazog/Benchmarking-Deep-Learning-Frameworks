@@ -64,6 +64,11 @@ USER appuser
 
 FROM nvidia/cuda:12.8.0-devel-ubuntu22.04
 
+# Install cross-compiler
+RUN apt-get install g++-aarch64-linux-gnu
+
+
+
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -74,14 +79,12 @@ RUN apt-get update && apt-get install -y \
     libomp-dev \
     && rm -rf /var/lib/apt/lists/*
 
+
+
 # Download LibTorch prebuilt with CUDA 12.8
 RUN wget https://download.pytorch.org/libtorch/cu128/libtorch-cxx11-abi-shared-with-deps-2.7.0%2Bcu128.zip -O libtorch.zip && \
     unzip libtorch.zip && \
     rm libtorch.zip
-
-RUN mkdir nvtx3_dir
-RUN cd nvtx3_dir
-RUN git clone https://github.com/NVIDIA/NVTX.git
 
 # Set environment variables
 ENV TORCH_DIR=/libtorch
@@ -94,6 +97,13 @@ COPY . /workspace
 
 # Create build directory and build with CMake
 RUN pwd ..
+
+# # CMake configuration
+# RUN cmake ../CNN/cpp \
+#   -DCMAKE_SYSTEM_NAME=Linux \
+#   -DCMAKE_SYSTEM_PROCESSOR=aarch64 \
+#   -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc \
+#   -DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++
 
 RUN mkdir -p build && cd build && \
     cmake ../CNN/cpp -DCMAKE_PREFIX_PATH=/libtorch && \
