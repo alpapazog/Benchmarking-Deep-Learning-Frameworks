@@ -17,3 +17,8 @@ target_link_libraries(CNNGpu "${TORCH_LIBRARIES}" nvToolsExt64_1.lib)
 
 add_executable(TestCNN test.cpp)
 target_link_libraries(TestCNN "${TORCH_LIBRARIES}" nvToolsExt64_1.lib)
+add_custom_command(TARGET CNNGpu POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "C:/libtorchgpu/libtorch/lib"
+    $<TARGET_FILE_DIR:CNNGpu>
+)

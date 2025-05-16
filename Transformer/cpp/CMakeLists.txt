@@ -12,3 +12,9 @@ target_link_libraries(TRANSFORMERTrain "${TORCH_LIBRARIES}")
 
 add_executable(TRANSFORMERTest TTest.cpp)
 target_link_libraries(TRANSFORMERTest "${TORCH_LIBRARIES}")
+
+add_custom_command(TARGET TRANSFORMERTrain POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "C:/libtorchgpu/libtorch/lib"
+    $<TARGET_FILE_DIR:TRANSFORMERTrain>
+)

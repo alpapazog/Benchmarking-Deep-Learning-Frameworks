@@ -12,3 +12,9 @@ target_link_libraries(CTCTrain "${TORCH_LIBRARIES}")
 
 add_executable(CTCTest CTCTest.cpp)
 target_link_libraries(CTCTest "${TORCH_LIBRARIES}")
+
+add_custom_command(TARGET CTCTrain POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "C:/libtorchgpu/libtorch/lib"
+    $<TARGET_FILE_DIR:CTCTrain>
+)

@@ -1,0 +1,4 @@
+Epoch 1: 3.35148 sec
+Epoch 2: 2.29363 sec
+Epoch 3: 2.30519 sec
+Epoch 4: 2.29169 sec

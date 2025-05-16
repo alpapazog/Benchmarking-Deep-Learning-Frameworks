@@ -52,7 +52,7 @@ int main() {
     torch::globalContext().setDeterministicCuDNN(false);
     // Load MNIST dataset
     std::cout<<"test1";
-    auto dataset = torch::data::datasets::MNIST("./data")
+    auto dataset = torch::data::datasets::MNIST("./data/MNIST/raw")
         .map(torch::data::transforms::Normalize<>(0.1307, 0.3081))
         .map(torch::data::transforms::Stack<>());
     

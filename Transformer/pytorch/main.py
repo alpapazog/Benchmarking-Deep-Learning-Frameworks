@@ -55,7 +55,7 @@ def generate_log_filename(prefix='log'):
     return f"{prefix}_{now.strftime('%Y-%m-%d_%H%M')}.txt"
 
 # Setup
-device = torch.device("cuda" if not torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
 # Load dataset (same as C++)

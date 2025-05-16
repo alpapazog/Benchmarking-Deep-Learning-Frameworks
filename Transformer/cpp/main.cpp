@@ -95,7 +95,7 @@ int main() {
     torch::Device device(torch::cuda::is_available() ? torch::kCUDA : torch::kCPU);
     std::cout << "Using device: " << (device.is_cuda() ? "CUDA" : "CPU") << "\n";
 
-    // Load IMDB dataset from .pt file like your LSTM
+    // Load IMDB dataset from .pt file
     std::cout << "test1 \n";
     torch::Tensor inputs, labels;
     std::ifstream file("./data/dataset.pt", std::ios::binary);
